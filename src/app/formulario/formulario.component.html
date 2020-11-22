@@ -1,0 +1,34 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">FORMULARIO</h1>
+    <hr>
+    <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+        <div class="col-md-4 mb-3">
+          <label>Nombre:
+            <input class="form-control" type="text" formControlName="nombre" placeholder="nombre">
+          </label>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label>Email:
+            <input class="form-control" type="text" formControlName="email" placeholder="email" required>
+          </label>
+        </div>
+        <div class="col-md-4 mb-3">
+          <label>
+              He leido y acepto los términos y condiciones
+              <input type="checkbox" formControlName="check" required>
+          </label>
+          <br><br>
+          <button class="btn btn-primary" type="submit" [disabled]="!formulario.valid">Enviar</button>
+          <hr>
+          <p>Estado del formulario: {{ formulario.status }}</p>
+        </div>
+    </form>
+  </div>
+</div>
+<hr>
+<div class="container">
+  <p class="mb-0">
+      <small>By Isabel Orozco Puerto </small>
+  </p>
+</div>
